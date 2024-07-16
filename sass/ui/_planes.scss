@@ -1,0 +1,88 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+
+.planes{
+    background-color: v.$Opacity;
+    padding: 50px 0;
+
+    h2{
+        @include m.headingBorder(v.$blanco,v.$verde);
+        width: 130px;
+    }
+    .descripcion{
+        color: v.$blanco;
+    }
+}
+
+.nuestros-planes{
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
+    justify-items: end;
+    margin-top: 30px;
+
+    @include m.telefono{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .plan{
+        @include m.telefono{
+            width: 100%;
+            margin:20px 0;
+        }
+        picture{
+            margin-bottom: 10px;
+            img{
+                height: 90px;
+            }
+        }
+        transition: transform 0.3s ease;
+        &:hover {
+            transform: scale(1.1);
+        }
+        width: 250px;
+        padding:50px 40px;
+        h3{
+            margin: 0;
+        }
+        .precio{
+            text-align: center;
+            font-weight: bold;
+        }
+        .listado li{
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        .boton-plan{
+            display: block;
+            text-align: center;
+            font-weight: bold;
+            color: v.$Opacity;
+            background-color: v.$verde;
+            padding: 10px;
+        }
+    }
+}
+.inicio,
+.pro{
+    background-color: v.$blanco;
+    height: 500px;
+    margin-top: 20px;
+}
+.pro{
+    display: grid;
+    place-self: start;
+}
+.negocio{
+    margin: -10px;
+    z-index: 20;
+    position: relative;
+    background-color: v.$verde;
+    border-radius: 20px;
+    .precio{
+        margin: 20px 0;
+    }
+    .boton-plan{
+        border: solid 1px v.$blanco;
+    }
+
+}
